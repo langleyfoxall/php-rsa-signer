@@ -37,14 +37,31 @@ be automatically determined in most cases. If not, you can specify the
 type as a second parameter.
 
 ```php
-$base64Signature = (new Signer($privateKey))
-            ->getSignature($json);
+// Instantiate with private key
 
-$base64Signature = (new Signer($privateKey))
-            ->setJsonEncodingOptions(JSON_UNESCAPED_SLASHES)
-            ->getBase64Signature($json);
+$signer = Signer($privateKey);
 
-$base64Signature = (new Signer($privateKey))
+// Instantiate with private key, and specific key type
+
+$signer = Signer($xmlPrivateKey, RSA::PRIVATE_FORMAT_XML);
+```
+
+You can then call the `getSignature` or `getBase64Signature` method to 
+sign the message, and return the signature.
+
+```php
+
+// Get binary signature
+
+$base64Signature = $signer->getSignature($json);
+
+// Get base 64 Signature
+
+$base64Signature = $signer->getBase64Signature($json);
+
+// Get base 64 signature, using custom options for JSON encoding 
+
+$base64Signature = $signer
             ->setJsonEncodingOptions(JSON_UNESCAPED_SLASHES)
             ->getBase64Signature($json);
 
