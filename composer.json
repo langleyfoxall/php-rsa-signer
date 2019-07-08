@@ -1,0 +1,21 @@
+{
+    "name": "langleyfoxall/php-rsa-signer",
+    "description": "PHP RSA Signer",
+    "type": "library",
+    "require": {
+        "php": ">=7.1",
+        "phpseclib/phpseclib": "^2.0"
+    },
+    "license": "LGPL-3.0-only",
+    "authors": [
+        {
+            "name": "Jordan Hall",
+            "email": "jordan@langleyfoxall.co.uk"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "LangleyFoxall\\RsaSigner\\": "src/"
+        }
+    }
+}
