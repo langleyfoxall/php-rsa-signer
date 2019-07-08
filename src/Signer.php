@@ -54,7 +54,7 @@ class Signer
         return $this->rsa->verify($message, $signature);
     }
 
-    public function verifyBase64Signature($message, string $signature) :bool 
+    public function verifyBase64Signature($message, string $signature) :bool
     {
         return $this->verifySignature($message, base64_decode($signature));
     }
