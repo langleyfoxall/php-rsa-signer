@@ -21,6 +21,8 @@ class Signer
      * If no type is specified, the type will be determined automatically where
      * possible.
      *
+     * @see \phpseclib\Crypt\RSA::PRIVATE_FORMAT_*
+     *
      * @param $key
      * @param bool $type
      */
