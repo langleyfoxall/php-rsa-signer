@@ -40,7 +40,7 @@ class Signer
         return $this;
     }
 
-    private function encodeMessage(string $message) :string
+    private function encodeMessage($message) :string
     {
         if (is_object($message) || is_array($message)) {
             $message = json_encode($message, $this->jsonEncodingOptions);
