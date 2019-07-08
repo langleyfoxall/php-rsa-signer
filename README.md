@@ -9,7 +9,7 @@ payloads with a specific private key.
 To install PHP RSA Signer, just run the following Composer command
 from the root of your project.
 
-```php
+```bash
 composer require langleyfoxall/php-rsa-signer
 ```
 
