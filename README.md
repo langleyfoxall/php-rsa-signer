@@ -1,5 +1,5 @@
 
-# PHP RSA Signer
+# 🔒 PHP RSA Signer
 
 PHP RSA Signer was designed to simplify the process of signing API
 payloads with a specific private key.

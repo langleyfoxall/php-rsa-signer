@@ -1,6 +1,6 @@
 {
     "name": "langleyfoxall/php-rsa-signer",
-    "description": "PHP RSA Signer",
+    "description": "\uD83D\uDD12 Simplifies the process of signing API payloads with a specific private key",
     "type": "library",
     "require": {
         "php": ">=7.1",
