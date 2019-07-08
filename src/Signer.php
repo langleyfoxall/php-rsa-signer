@@ -21,10 +21,7 @@ class Signer
     public function getSignature($message) :string
     {
         $message = $this->encodeMessage($message);
-
-        if (!is_string($message)) {
-            throw new InvalidArgumentException('Message must be a string, or an array/object that can be JSON encoded.');
-        }
+        $this->sanityCheckMessage($message);
 
         return $this->rsa->sign($message);
     }
@@ -51,12 +48,26 @@ class Signer
 
     public function verifySignature($message, string $signature) :bool
     {
+        $message = $this->encodeMessage($message);
+        $this->sanityCheckMessage($message);
+
         return $this->rsa->verify($message, $signature);
     }
 
     public function verifyBase64Signature($message, string $signature) :bool
     {
         return $this->verifySignature($message, base64_decode($signature));
+    }
+
+    private function sanityCheckMessage($message)
+    {
+        if (!is_string($message)) {
+            throw new InvalidArgumentException('Message must be a string, or an array/object that can be JSON encoded.');
+        }
+
+        if (empty($message)) {
+            throw new InvalidArgumentException('Message must not be empty.');
+        }
     }
 
 }
