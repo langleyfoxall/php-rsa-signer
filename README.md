@@ -32,7 +32,7 @@ $message->foo = 'bar';
 $message->baz = 'boff';
 ```
 
-Next, instantiate the `Signer` class with the private key. Its type will
+Next, instantiate the `Signer` class with the path to your private key. Its type will
 be automatically determined in most cases. If not, you can specify the 
 type as a second parameter.
 
